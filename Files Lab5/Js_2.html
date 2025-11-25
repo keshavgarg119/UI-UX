@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question - 2 JS</title>
+</head>
+<body>
+  <script>
+    let arr = [69,96,16,12,11];
+    let large = Math.max(...arr);
+    let small = Math.min(...arr);
+    console.log("Array: " + arr);
+    console.log("Largest: " + large);
+    console.log("Smallest: " + small);
+    let ascend = [...arr].sort((a,b) => a - b);
+    let descend = [...arr].sort((a,b) => b - a);
+    console.log("Ascending: " + ascend);
+    console.log("Descending: " + descend); 
+  </script>
+</body>
+</html>
