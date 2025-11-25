@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1.0">
-        <title> Saturnalia 2025 </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saturnalia 2025 - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <body>
-        <nav>
-            <a href="index.html"> Home </a>
-            <a href="events.html"> Events </a>
-            <a href="contact.html"> Contact </a>
-            <a href="register.html"> Register </a>
-            <a href="gallery.html"> Gallery </a>
-            <a href="schedule.html"> Schedule </a>
-        </nav>
-        <div class="hero">
-            <h1> Saturnalia 2025 </h1>
-            <p>November 11 - November 17</p>
-            <p>A week full of fun, competitions, talent, and celebration!</p>
-        </div>
+<body id="home-page">
+  <nav>
+    <a class="active" href="index.html" class="active">Home</a>
+    <a class="active" href="events.html">Events</a>
+    <a class="active" href="schedule.html">Schedule</a>
+    <a class="active" href="register.html">Register</a>
+    <a class="active" href="gallery.html">Gallery</a>
+    <a class="active" href="contact.html">Contact & FAQ</a>
+  </nav>
 
-         <footer>© 2025 Saturnalia. All Rights Reserved.</footer>
-    </body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Saturnalia 2025</h1>
+      <p>November 11 - November 17</p>
+      <p>A week full of fun, competitions, talent, and celebration!</p>
+      <a href="register.html" class="primary-btn">Register Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- FLEXBOX SECTION -->
+    <section id="home-intro" class="home-layout">
+      <div class="home-text card">
+        <h2>Welcome to Saturnalia</h2>
+        <p>
+          Saturnalia is the annual cultural, technical and sports fest of our college,
+          packed with thrilling performances, mind-bending competitions and
+          memorable nights with your friends.
+        </p>
+        <p>
+          Join us for a full week of events, from dance battles and band nights
+          to hackathons and sports tournaments.
+        </p>
+      </div>
+
+      <div class="home-info card">
+        <h3>Why You’ll Love It</h3>
+        <ul class="feature-list">
+          <li>Live performances and DJ nights</li>
+          <li>Technical events for coders and innovators</li>
+          <li>High-energy sports matches and fun games</li>
+          <li>Food stalls, photo booths and more!</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section id="event-video" class="highlights">
+      <h2>Highlights from Previous Years</h2>
+      <p>
+        Watch this short highlight reel to get a glimpse of the crazy energy,
+        crowd, and performances from the last Saturnalia!
+      </p>
+
+      <div class="video-wrapper">
+        <!-- Use your own video or a YouTube iframe if you prefer -->
+        <video controls poster="images/highlights-poster.jpg">
+          <source src="media/saturnalia-highlights.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 Saturnalia. All Rights Reserved.</footer>
+</body>
 </html>

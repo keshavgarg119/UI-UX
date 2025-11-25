@@ -3,19 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Schedule - Saturnalia 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="schedule-page">
   <nav>
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="register.html">Register</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact & FAQ</a>
+    <a class="active" href="index.html">Home</a>
+    <a class="active" href="events.html">Events</a>
+    <a class="active" href="schedule.html" class="active">Schedule</a>
+    <a class="active" href="register.html">Register</a>
+    <a class="active" href="gallery.html">Gallery</a>
+    <a class="active" href="contact.html">Contact & FAQ</a>
   </nav>
 
   <h2 style="text-align:center;">Event Schedule</h2>
+
+  <!-- AUDIO GREETING SECTION -->
+  <section class="audio-greeting">
+    <div class="audio-text">
+      <h3>Welcome Message</h3>
+      <p>
+        Hello participants! This short audio message will guide you through
+        the main events and important announcements for each day of Saturnalia.
+        Make sure you don’t miss your favourite events!
+      </p>
+    </div>
+
+    <audio controls>
+      <!-- Put your own audio file inside a "media" folder -->
+      <source src="media/saturnalia-greeting.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
   <table>
     <tr>
       <th>Date</th>

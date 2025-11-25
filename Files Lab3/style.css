@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Element selector */
 body {
   font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top, #fdf1f1, #f3f8ff, #e6e9f0);
@@ -11,19 +13,23 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
+/* Navbar (Flexbox) */
 nav {
   background: linear-gradient(90deg, #6a11cb, #2575fc);
   padding: 15px;
-  text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
+
 nav a {
   color: #fff;
-  margin: 0 20px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05em;
@@ -31,13 +37,22 @@ nav a {
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-nav a:hover {
+
+/* Pseudo-classes */
+nav a:hover,
+nav a:focus {
   background: #ff6a00;
   color: #fff;
 }
 
+nav a.active {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
 /* Hero */
 .hero {
+  position: relative;
   background: linear-gradient(135deg,#ff6a00, #ee0979, #6a11cb);
   color: rgb(250, 247, 247);
   padding: 100px 20px;
@@ -46,16 +61,102 @@ nav a:hover {
   border-bottom-right-radius: 40px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
+
+/* Pseudo-element */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border-radius: 35px;
+  border: 1px dashed rgba(255,255,255,0.4);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  /* Flexbox */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
 .hero h1 {
   font-size: 4em;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-weight: 800;
   text-shadow: 3px 3px 12px rgba(0,0,0,0.4);
 }
+
 .hero p {
   font-size: 1.4em;
-  margin: 10px 0;
   font-weight: 500;
+}
+
+/* Button (class selector) */
+.primary-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  color: #6a11cb;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+  background: #ffe8ff;
+}
+
+/* Reusable card (Box Model) */
+.card {
+  background: #fff;
+  padding: 25px;
+  margin: 10px 0;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Home layout (Flexbox) */
+.home-layout {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.home-text,
+.home-info {
+  flex: 1 1 280px;
+}
+
+/* feature list overrides default UL styles */
+.feature-list {
+  list-style: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 15px 0 0;
+}
+
+.feature-list li {
+  margin: 10px 0;
+  padding-left: 14px;
+  border-left: 3px solid #ff6a00;
 }
 
 /* Section Headings */
@@ -67,6 +168,7 @@ h2 {
   font-weight: 800;
   position: relative;
 }
+
 h2::after {
   content: "";
   display: block;
@@ -75,6 +177,13 @@ h2::after {
   margin: 10px auto;
   background: linear-gradient(90deg, #ff6a00, #ee0979);
   border-radius: 2px;
+}
+
+/* Smaller headings */
+h3 {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+  color: #2d3436;
 }
 
 /* Lists (Events Page) */
@@ -86,6 +195,7 @@ ul, ol {
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
+
 li {
   margin: 12px 0;
   font-size: 1.2em;
@@ -95,6 +205,7 @@ li {
   border-left: 4px solid #2575fc;
   transition: 0.3s;
 }
+
 li:hover {
   border-left: 4px solid #de2312;
   transform: translateX(5px);
@@ -109,21 +220,81 @@ table {
   overflow: hidden;
   box-shadow: 0 10px 24px rgba(0,0,0,0.15);
 }
+
 table th, table td {
   padding: 18px;
   text-align: center;
 }
+
 table th {
   background: linear-gradient(90deg, #6a11cb, #2575fc);
   color: white;
   font-size: 1.15em;
 }
+
+/* Pseudo-class: nth-child */
 table tr:nth-child(even) {
   background: #d8ddeb;
 }
+
 table tr:hover {
   background: #ffe8d6;
   transition: 0.3s;
+}
+
+/* AUDIO GREETING (Flexbox) */
+.audio-greeting {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px 25px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.audio-text p {
+  margin-top: 5px;
+}
+
+.audio-greeting audio {
+  flex: 0 0 230px;
+}
+
+/* VIDEO SECTION */
+.highlights {
+  max-width: 900px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.highlights p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-wrapper video,
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Form (Registration) */
@@ -135,13 +306,21 @@ form {
   border-radius: 20px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.15);
 }
+
+/* Element selector */
 form label {
   font-weight: 600;
   display: block;
   margin-top: 18px;
   color: #2c2c54;
 }
-form input, form select, form textarea {
+
+/* Attribute selector + pseudo-element */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
   width: 100%;
   padding: 14px;
   margin-top: 6px;
@@ -152,10 +331,26 @@ form input, form select, form textarea {
   background: #fdfdfd;
   transition: all 0.3s ease;
 }
-form input:focus, form select:focus, form textarea:focus {
+
+input::placeholder {
+  color: #a0a0a0;
+  font-size: 0.95em;
+}
+
+/* Attribute selector for required fields */
+input[required],
+select[required],
+textarea[required] {
+  border-left: 4px solid #6a11cb;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
   border: 1px solid #6a11cb;
   box-shadow: 0 0 10px rgba(106,17,203,0.3);
 }
+
 form button {
   margin-top: 25px;
   padding: 16px;
@@ -169,18 +364,20 @@ form button {
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 form button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
   background: linear-gradient(90deg, #6a11cb, #fc25bf);
 }
 
-/* Gallery */
+/* Gallery (CSS Grid – already responsive) */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 20px;
+  margin: 20px auto 40px;
+  padding: 0 20px;
 }
 
 .gallery figure {
@@ -188,11 +385,12 @@ form button:hover {
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery figure:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.25);
 }
 
 .gallery img {
@@ -202,13 +400,12 @@ form button:hover {
 }
 
 figcaption {
-    color: #3143e7;
+  color: #3143e7;
   padding: 10px;
   text-align: center;
   font-weight: bold;
   background: #f1f9ff;
 }
-
 
 /* Contact & FAQ */
 .contact, .faq {
@@ -219,11 +416,13 @@ figcaption {
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
+
 .contact a {
   color: #2575fc;
   text-decoration: none;
   font-weight: 600;
 }
+
 .contact a:hover {
   color: #ff6a00;
 }
@@ -236,4 +435,64 @@ footer {
   padding: 15px;
   margin-top: 30px;
   font-size: 0.9rem;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  form,
+  table,
+  ul,
+  ol,
+  .contact,
+  .faq {
+    width: 90%;
+  }
+
+  .audio-greeting {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .audio-greeting audio {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  nav a {
+    margin: 3px 6px;
+    padding: 6px 12px;
+    font-size: 0.95em;
+  }
+
+  .hero h1 {
+    font-size: 2.2em;
+  }
+
+  .hero p {
+    font-size: 1.05em;
+  }
+
+  .home-layout {
+    padding: 0 12px;
+  }
+
+  .highlights {
+    padding: 16px;
+  }
 }
