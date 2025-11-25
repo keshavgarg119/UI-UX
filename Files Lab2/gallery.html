@@ -20,28 +20,45 @@
 
   <main>
     <h2>Travel Gallery</h2>
-    <div class="gallery">
+
+    <div class="gallery-controls">
+      <button type="button" id="gridViewBtn" class="active">Grid View</button>
+      <button type="button" id="listViewBtn">List View</button>
+    </div>
+
+    <div class="gallery" data-layout="grid">
       <figure>
-        <img src="images/paris.jpg" alt="Paris">
+        <img src="images/paris.jpg" data-large="images/paris.jpg" alt="Paris">
         <figcaption>Paris, France</figcaption>
       </figure>
       <figure>
-        <img src="images/bali.jpg" alt="Bali">
+        <img src="images/bali.jpg" data-large="images/bali.jpg" alt="Bali">
         <figcaption>Bali, Indonesia</figcaption>
       </figure>
       <figure>
-        <img src="images/dubai.jpg" alt="Dubai">
+        <img src="images/dubai.jpg" data-large="images/dubai.jpg" alt="Dubai">
         <figcaption>Dubai, UAE</figcaption>
       </figure>
       <figure>
-        <img src="images/switzerland.jpg" alt="Switzerland">
+        <img src="images/switzerland.jpg" data-large="images/switzerland.jpg" alt="Switzerland">
         <figcaption>Switzerland</figcaption>
       </figure>
+    </div>
+
+    <!-- Modal for large image -->
+    <div id="image-modal" class="image-modal">
+      <div class="image-modal-content">
+        <span id="modal-close" class="image-modal-close">&times;</span>
+        <img id="modal-img" src="" alt="">
+        <p id="modal-caption"></p>
+      </div>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Garg Travels. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

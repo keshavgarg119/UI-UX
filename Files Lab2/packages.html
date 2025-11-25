@@ -20,37 +20,29 @@
 
   <main>
     <h2>Our Tour Packages</h2>
-    <table>
-      <tr>
-        <th>Destination</th>
-        <th>Duration</th>
-        <th>Price</th>
-      </tr>
-      <tr>
-        <td>Paris, France</td>
-        <td>7 Days</td>
-        <td>$1200</td>
-      </tr>
-      <tr>
-        <td>Bali, Indonesia</td>
-        <td>5 Days</td>
-        <td>$950</td>
-      </tr>
-      <tr>
-        <td>Dubai, UAE</td>
-        <td>4 Days</td>
-        <td>$800</td>
-      </tr>
-      <tr>
-        <td>Switzerland</td>
-        <td>8 Days</td>
-        <td>$1500</td>
-      </tr>
+    <p>All package prices below are computed dynamically in JavaScript with seasonal multipliers and surcharges.</p>
+
+    <table id="packages-table">
+      <thead>
+        <tr>
+          <th>Package ID</th>
+          <th>Destination</th>
+          <th>Duration</th>
+          <th>Base Price</th>
+          <th>Season</th>
+          <th>Final Price</th>
+        </tr>
+      </thead>
+      <tbody id="packages-body">
+        <!-- Rows rendered via JavaScript -->
+      </tbody>
     </table>
   </main>
 
   <footer>
     <p>&copy; 2025 Garg Travels. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

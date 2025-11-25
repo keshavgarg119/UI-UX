@@ -20,37 +20,50 @@
 
   <main>
     <h2>Booking Form</h2>
-    <form>
+    <form id="booking-form">
       <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required><br><br>
+      <input type="text" id="name" name="name" required>
 
-      <label for="date">Travel Dates:</label>
-      <input type="date" id="date" name="date"><br><br>
+      <label for="checkIn">Check-In Date:</label>
+      <input type="date" id="checkIn" name="checkIn" required>
 
-      <label for="destination">Destination:</label>
+      <label for="checkOut">Check-Out Date:</label>
+      <input type="date" id="checkOut" name="checkOut" required>
+
+      <label for="destination">Destination (for reference):</label>
       <select id="destination" name="destination">
-        <option>Paris</option>
-        <option>Bali</option>
-        <option>Dubai</option>
+        <option>Paris, France</option>
+        <option>Bali, Indonesia</option>
+        <option>Dubai, UAE</option>
         <option>Switzerland</option>
-      </select><br><br>
+      </select>
 
-      <label for="package">Select Package:</label>
-      <select id="package" name="package">
-        <option>Standard</option>
-        <option>Premium</option>
-        <option>Luxury</option>
-      </select><br><br>
+      <label for="packageSelect">Select Package:</label>
+      <select id="packageSelect" name="package" required>
+        <option value="">-- Select a Package --</option>
+        <!-- Options injected from JavaScript based on travelPackages -->
+      </select>
 
-      <label for="people">Number of People:</label>
-      <input type="number" id="people" name="people" min="1" value="1"><br><br>
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" value="1" required>
 
-      <input type="submit" value="Book Now">
+      <label for="promoCode">Promo Code (optional):</label>
+      <input type="text" id="promoCode" name="promoCode" placeholder="e.g. EARLYBIRD">
+
+      <p class="price-display">
+        Estimated Total: <span id="totalPrice">--</span>
+      </p>
+
+      <p id="formErrors" class="error-message"></p>
+
+      <input type="submit" id="submitBtn" value="Book Now">
     </form>
   </main>
 
   <footer>
     <p>&copy; 2025 Garg Travels. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
