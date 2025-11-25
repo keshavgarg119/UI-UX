@@ -333,7 +333,6 @@ input[type="submit"]:disabled {
 
 .image-modal-close {
   display: inline-block;
-  float: right;
   font-size: 1.5rem;
   cursor: pointer;
   margin-bottom: 10px;
